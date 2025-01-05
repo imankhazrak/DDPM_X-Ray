@@ -3,7 +3,80 @@
 Paper ([Link](https://doi.org/10.48550/arXiv.2412.12532)):  
 Addressing Small and Imbalanced Medical Image Datasets Using Generative Models: A Comparative Study of DDPM and PGGANs with Random and Greedy K Sampling 
 
-**Table of Contents**   
+Authors:  
+Iman Khazrak, Shakhnoza Takhirova, Mostafa M. Rezaee, Mehrdad Yadollahi, Robert C. Green II, Shuteng Niu
+
+**Table of Contents** 
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-abstract">1. Abstract</a>
+</div>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#2-Our-Contributions">2. Our Contributions</a>
+</div>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-Contents-of-This-Repo">3. Contents of This Repo</a>
+</div>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
+</div>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
+</div>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
+</div>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
+</div>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
+</div>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
+</div>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
+</div>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
+</div>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
+</div>
+&nbsp;
+
+<details>
+  <summary><a href="#1-abstract">1. Abstract</a></summary>
+  <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#11-heading-11">1.1. Heading 1.1</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#12-heading-12">1.2. Heading 1.2</a><br>
+  </div>
+</details>
+
+
+
 [1. Abstract](#1-abstract)   
 [2. Contributions](#2-contributions)   
 [3. Contents](#3-contents)   
@@ -32,7 +105,7 @@ For more details, please refer to the [paper](https://doi.org/10.48550/arXiv.241
 - **Increased Robustness**: Adding synthetic images to the original datasets enhances the robustness of classification models.
 - **Faster Convergence**: The inclusion of synthetic images accelerates the convergence of classification models.
 
-## 4. Contents of this repo
+## 3. Contents of This Repo
 
 ```sh
 .
@@ -85,7 +158,14 @@ For more details, please refer to the [paper](https://doi.org/10.48550/arXiv.241
 
 ## Setup
 
-### Prerequisites
+### Method 1: Conda Environment
+
+Create a conda environment using `environment.yml`:      
+    ```bash    
+    conda env create -f environment.yml   
+    conda activate your-environment-name    
+    ```     
+
 
 - Python 3.x
 - Conda or virtualenv
