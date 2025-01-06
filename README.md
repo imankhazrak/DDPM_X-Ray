@@ -1,3 +1,5 @@
+![alt text](Figures/Logo_DDPM_X-Ray.jpg)
+
 # GenAI Potentials to Enhance Medical Image Classification
 
 Paper ([Link](https://doi.org/10.48550/arXiv.2412.12532)):  
@@ -8,86 +10,56 @@ Iman Khazrak, Shakhnoza Takhirova, Mostafa M. Rezaee, Mehrdad Yadollahi, Robert 
 
 **Table of Contents** 
 <div>
-  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-abstract">1. Abstract</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-abstract"><i><b>1. Abstract</b></i></a>
 </div>
 &nbsp;
 
 <div>
-  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#2-Our-Contributions">2. Our Contributions</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#2-our-contributions"><i><b>2. Our Contributions</b></i></a>
 </div>
 &nbsp;
 
 <div>
-  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-Contents-of-This-Repo">3. Contents of This Repo</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-contents-of-this-repo"><i><b>3. Contents of this repo</b></i></a>
 </div>
 &nbsp;
 
 <div>
-  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#4-installation"><i><b>4. Installation</b></i></a>
 </div>
 &nbsp;
 
 <div>
-  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#methodology"><i><b>5. Methodology</b></i></a>
 </div>
 &nbsp;
 
 <div>
-  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
-</div>
-&nbsp;
-
-<div>
-  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
-</div>
-&nbsp;
-
-<div>
-  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
-</div>
-&nbsp;
-
-<div>
-  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
-</div>
-&nbsp;
-
-<div>
-  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
-</div>
-&nbsp;
-
-<div>
-  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
-</div>
-&nbsp;
-
-<div>
-  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-heading-3">3. Heading 3</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#6-dataset"><i><b>6. Dataset</b></i></a>
 </div>
 &nbsp;
 
 <details>
-  <summary><a href="#1-abstract">1. Abstract</a></summary>
+  <summary><a href="#7-running-the-codes"><i><b>7. Running the codes</b></i></a></summary>
   <div>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#11-heading-11">1.1. Heading 1.1</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#12-heading-12">1.2. Heading 1.2</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#71-training-the-vgg16-model">7.1. Training the VGG16 model</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#72-training-the-custom-cnn-model">7.2. Training the custom CNN model</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#73-training-the-ddpm-model">7.3. Training the DDPM mpdel</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#74-training-the-pggans-model">7.4. Training the PGGANs model</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#75-calculating-the-fid-scores">7.5. Calculating the FID scores</a><br>
   </div>
 </details>
+&nbsp;
 
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#8-results"><i><b>8. Results</b></i></a>
+</div>
+&nbsp;
 
-
-[1. Abstract](#1-abstract)   
-[2. Contributions](#2-contributions)   
-[3. Contents](#3-contents)   
-[4. Project Structure](#4-project-structure)   
-[5. Setup](#setup)   
-[6. Methodology](#methodology)   
-[7. Dataset](#dataset)   
-[8. Running the Code](#running-the-code)   
-[9. Results](#results)   
-[10. Contacts](#contacts)   
-[11. Cite us](#cite-us)   
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#9-cite-us"><i><b>9. Cite us</b></i></a>
+</div>
+&nbsp;
 
 ## 1. Abstract
 
@@ -99,11 +71,20 @@ For more details, please refer to the [paper](https://doi.org/10.48550/arXiv.241
 
 ## 2. Our Contributions
 
-- **An Evaluation Framework**: A comprehensive framework to systematically evaluate and compare the quality of images produced by DDPM and PGGANs.
-- **High-Quality Image Generation**: Demonstrates that producing high-quality and diverse synthetic images using small medical image datasets is feasible.
-- **Accuracy Improvement**: Incorporating synthetic images into the training datasets significantly improves the accuracy of classification models.
-- **Increased Robustness**: Adding synthetic images to the original datasets enhances the robustness of classification models.
-- **Faster Convergence**: The inclusion of synthetic images accelerates the convergence of classification models.
+- **An Evaluation Framework**:    
+A comprehensive framework to systematically evaluate and compare the quality of images produced by DDPM and PGGANs.
+
+- **High-Quality Image Generation**:     
+Demonstrates that producing high-quality and diverse synthetic images using small medical image datasets is feasible.   
+
+- **Accuracy Improvement**:     
+Incorporating synthetic images into the training datasets significantly improves the accuracy of classification models.    
+
+- **Increased Robustness**:     
+Adding synthetic images to the original datasets enhances the robustness of classification models.
+
+- **Faster Convergence**:     
+The inclusion of synthetic images accelerates the convergence of classification models.
 
 ## 3. Contents of This Repo
 
@@ -156,55 +137,77 @@ For more details, please refer to the [paper](https://doi.org/10.48550/arXiv.241
 
 ```
 
-## Setup
+## 4. Installation 
 
-### Method 1: Conda Environment
+***Step 1***:  
+Please consider starring the repository to support its development.
 
-Create a conda environment using `environment.yml`:      
-    ```bash    
-    conda env create -f environment.yml   
-    conda activate your-environment-name    
-    ```     
+***Step 2***:   
+Clone the repository by replacing `your-username` with your GitHub username in the command below. Then, navigate to the project directory.      
+```bash
+git clone https://github.com/your-username/DDPM_X-Ray.git    
+cd DDPM_X-Ray    
+```
 
+***Step 3***:    
+Install Python and the required packages by following one of the methods below:  
 
-- Python 3.x
-- Conda or virtualenv
+- ***Method 1: Usinf Conda***
 
-### Installation
+  Create a Conda environment using the `environment.yml` file:      
+  ```bash       
+  conda env create -f environment.yml      
+  conda activate DDPM_X-Ray        
+  ```     
 
-1. Clone this repository:
-    ```bash
-    git clone https://github.com/yourusername/medical-image-classification.git
-    cd medical-image-classification
-    ```
+- ***Method 2: Using venv***    
+  
+  1. Ensure you are in the project directory `DDPM_X-Ray`.      
 
-2. Install the required packages using `requirements.txt`:
-    ```bash
-    pip install -r requirements.txt
-    ```
+  2. Create a virtual environment using `venv`:   
+      ```bash
+      python -m venv DDPM_X-Ray
+      ```
 
-3. Alternatively, create a conda environment using `environment.yml`:
-    ```bash
-    conda env create -f environment.yml
-    conda activate your-environment-name
-    ```
+  3. Activate the virtual environment:
+      - On ***Mac/Linux***:
+        ```bash
+        source DDPM_X-Ray\Scripts\activate
+        ```
+      - On ***Windoes***:
+        ```bash
+        DDPM_X-Ray\Scripts\activate
+        ```
 
-## Methodology
+  4. Install the required packages using the `requirements.txt` file:
+      ```bash
+      pip install -r requirements.txt
+      ```
+
+- ***Method 3: Without setting up an environment***    
+
+  1. Make sure you have `python=3.10.14` installed on your machine.
+
+  2. Install the required packages using the `requirements.txt` file:
+      ```bash
+      pip install -r requirements.txt
+      ```
+
+## 5. Methodology
 ![alt text](Figures/Flowchart2.png)
 
-## Dataset
+## 6. Dataset
 
-The dataset used in this study consists of Chest X-ray (CXR) images with two classes: NORMAL and PNEUMONIA. The dataset is structured as follows:
+The dataset used in this study consists of Chest X-ray (CXR) images with two classes: *NORMAL* and *PNEUMONIA*. The dataset is structured as follows:
 - `dataset/NORMAL`: Contains normal CXR images.
 - `dataset/PNEUMONIA`: Contains pneumonia CXR images.
-
 
 ![alt text](Figures/Dataset.png)
 
 
-## Running the Code
+## 7. Running the Codes
 
-### Training the VGG16 Model
+### 7.1. Training the VGG16 Model
 
 1. Prepare the dataset:
     ```python
@@ -226,7 +229,7 @@ The dataset used in this study consists of Chest X-ray (CXR) images with two cla
     plot_train_history(fold_metrics_df, 'VGG16 Training History', 'vgg16_training_history.png')
     ```
 
-### Training the Custom CNN Model
+### 7.2. Training the Custom CNN Model
 
 1. Load the dataset and prepare it as shown in the VGG16 training section.
 
@@ -236,12 +239,12 @@ The dataset used in this study consists of Chest X-ray (CXR) images with two cla
     fold_metrics_df, best_model = fit_classification_model_cv(X, y)
     ```
 
-### Training DDPM
+### 7.3. Training the DDPM model
 
 1. Open the `DDPM_Pytorch.ipynb` notebook.
 2. Follow the instructions to train and evaluate the DDPM model.
 
-### Training PGGANs
+### 7.4. Training the PGGANs model
 
 1. Train the PGGAN model using the `train.py` script:
     ```bash
@@ -254,21 +257,21 @@ The dataset used in this study consists of Chest X-ray (CXR) images with two cla
 </p>
 
 
-### Calculating FID Scores
+### 7.5. Calculating the FID Scores
 
 1. Open the `fid_plot.ipynb` notebook.
 2. Follow the instructions to calculate and plot the FID scores.
 
 ![alt text](Figures/FID (1).png)
 
-## Results
+## 8. Results
 
 The results from the cross-validation and test set evaluations will provide insights into the performance improvements achieved by using synthetic images generated by DDPM and PGGANs.
 
 ![alt text](<Figures/Classification_boxplots.png>)
 ![alt text](<Figures/Classification_boxplots_F1.png>)
 
-## Cite us 
+## 9. Cite us 
 
 - For any questions or issues, feel free to email Imran Khazrak (ikhazra@bgsu.edu) and/or Mostafa Rezaee (mostam@bgsu.edu).
 
