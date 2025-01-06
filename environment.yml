@@ -1,4 +1,4 @@
-name: ddpm_pytorch
+name: DDPM_X-Ray
 channels:
   - conda-forge
   - anaconda
