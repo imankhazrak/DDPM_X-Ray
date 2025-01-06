@@ -20,7 +20,7 @@ Iman Khazrak, Shakhnoza Takhirova, Mostafa M. Rezaee, Mehrdad Yadollahi, Robert 
 &nbsp;
 
 <div>
-  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-contents-of-this-repo"><i><b>3. Contents of this repo</b></i></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-repository-contents"><i><b>3. Repository Contents</b></i></a>
 </div>
 &nbsp;
 
@@ -40,13 +40,13 @@ Iman Khazrak, Shakhnoza Takhirova, Mostafa M. Rezaee, Mehrdad Yadollahi, Robert 
 &nbsp;
 
 <details>
-  <summary><a href="#7-running-the-codes"><i><b>7. Running the codes</b></i></a></summary>
+  <summary><a href="#7-code-execution-guide"><i><b>7. Code Execution Guide</b></i></a></summary>
   <div>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#71-training-the-vgg16-model">7.1. Training the VGG16 model</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#72-training-the-custom-cnn-model">7.2. Training the custom CNN model</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#73-training-the-ddpm-model">7.3. Training the DDPM mpdel</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#74-training-the-pggans-model">7.4. Training the PGGANs model</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#75-calculating-the-fid-scores">7.5. Calculating the FID scores</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#71-training-the-vgg16-model">7.1. Training the VGG16 Model</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#72-training-the-custom-cnn-model">7.2. Training the Custom CNN Model</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#73-training-the-ddpm-model">7.3. Training the DDPM Model</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#74-training-the-pggans-model">7.4. Training the PGGANs Model</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#75-calculating-the-fid-scores">7.5. Calculating the FID Scores</a><br>
   </div>
 </details>
 &nbsp;
@@ -63,7 +63,7 @@ Iman Khazrak, Shakhnoza Takhirova, Mostafa M. Rezaee, Mehrdad Yadollahi, Robert 
 
 ## 1. Abstract
 
-This project addresses the challenges of small and imbalanced medical image datasets by exploring two generative models: Denoising Diffusion Probabilistic Models (DDPM) and Progressive Growing Generative Adversarial Networks (PGGANs). These models are used to generate synthetic images to augment medical datasets, which improves the performance of classification models.
+This project addresses the challenges of small and imbalanced medical image datasets by exploring two generative models: Denoising Diffusion Probabilistic Models (DDPM) and Progressive Growing Generative Adversarial Networks (PGGANs). These models are used to generate synthetic images to augment medical datasets, which improves the performance of classification algorithms.
 
 We evaluate the impact of DDPM- and PGGAN-generated synthetic images on the performance of custom CNN, untrained VGG16, pretrained VGG16, and pretrained ResNet50 models, demonstrating significant improvements in model robustness and accuracy, especially in imbalanced scenarios.
 
@@ -78,38 +78,51 @@ A comprehensive framework to systematically evaluate and compare the quality of 
 Demonstrates that producing high-quality and diverse synthetic images using small medical image datasets is feasible.   
 
 - **Accuracy Improvement**:     
-Incorporating synthetic images into the training datasets significantly improves the accuracy of classification models.    
+Incorporating synthetic images into the training datasets significantly improves the accuracy of classification algorithms.    
 
 - **Increased Robustness**:     
-Adding synthetic images to the original datasets enhances the robustness of classification models.
+Adding synthetic images to the original datasets enhances the robustness of classification algorithms.
 
 - **Faster Convergence**:     
-The inclusion of synthetic images accelerates the convergence of classification models.
+The inclusion of synthetic images accelerates the convergence of classification algorithms.
 
-## 3. Contents of This Repo
+## 3. Repository Contents
+<!-- tree -a -I '.git' > tree.txt -->
 
 ```sh
 .
-├── Code
-│   ├── Classification Models
-│   │   ├── Classification_128input
-│   │   └── Classification_224input
-│   ├── DDPM
-│   │   └── DDPM_Pytorch.ipynb
-│   ├── FID
-│   │   ├── Results.txt
-│   │   ├── fid.sh
-│   │   ├── fid_comparison_plot.png
-│   │   ├── fid_comparison_plot_full.png
-│   │   └── fid_plot.ipynb
-│   └── PGGANs
-│       ├── ModelTrainingImages
-│       ├── progan_modules.py
-│       ├── train.py
-│       ├── train_config_NRM200k_2024-04-11_20_17.txt
-│       ├── train_config_PNM200k_2024-04-11_21_23.txt
-│       ├── train_log_NRM200k_2024-04-11_20_17.txt
-│       └── train_log_PNM200k_2024-04-11_21_23.txt
+├── .gitignore
+├── Cite us
+│   └── README.md
+├── Codes
+│   ├── Classification Models
+│   │   ├── VGG_help.py
+│   │   ├── plots.py
+│   │   ├── updated_pretrained_balanced-VGG_ResNet-epo5.ipynb
+│   │   ├── updated_pretrained_imbalanced-VGG_ResNet-epo5.ipynb
+│   │   ├── updated_untrained_balanced-VGG_ResNet.ipynb
+│   │   └── updated_untrained_imbalanced-VGG_ResNet.ipynb
+│   ├── DDPM
+│   │   └── DDPM_Pytorch.ipynb
+│   ├── FID
+│   │   ├── FID.ipynb
+│   │   ├── Results.txt
+│   │   ├── fid.sh
+│   │   ├── fid_comparison_plot.png
+│   │   ├── fid_comparison_plot_full.png
+│   │   └── fid_plot.ipynb
+│   └── PGGANs
+│       ├── .DS_Store
+│       ├── ModelTrainingImages
+│       │   ├── PGAN_Architecture.png
+│       │   ├── PGAN_NRM_loss.png
+│       │   └── PGAN_PNM_loss.png
+│       ├── progan_modules.py
+│       ├── train.py
+│       ├── train_config_NRM200k_2024-04-11_20_17.txt
+│       ├── train_config_PNM200k_2024-04-11_21_23.txt
+│       ├── train_log_NRM200k_2024-04-11_20_17.txt
+│       └── train_log_PNM200k_2024-04-11_21_23.txt
 ├── Dataset
 │   ├── All_Data
 │   │   ├── NORMAL
@@ -125,16 +138,32 @@ The inclusion of synthetic images accelerates the convergence of classification 
 │       ├── NORMAL
 │       └── PNEUMONIA
 ├── Figures
-│   ├── DDPM_forward.png
-│   ├── FID.png
-│   ├── Normal_vs_Original_ddpm_3images.png
-│   ├── Pneumonia_Original_ddpm_gans_3images.png
-│   └── VGG16_and_CNN_performance_5 runs_2.png
-├── requirements.txt
-├── environment.yml
-├── README.md
+│   ├── Classification_boxplots.png
+│   ├── Classification_boxplots_F1.png
+│   ├── DDPM_forward.png
+│   ├── Dataset.png
+│   ├── FID (1).png
+│   ├── FID.png
+│   ├── Flowchart2.png
+│   ├── Logo_DDPM_X-Ray.jpg
+│   ├── Normal_gallary.png
+│   ├── Normal_vs_Original_ddpm_3images.png
+│   ├── Pneumina_gallary.png
+│   ├── Pneumonia_Original_ddpm_gans_3images.png
+│   ├── README.md
+│   ├── Run_results.png
+│   ├── VGG16_and_CNN_performance_5 runs_2.png
+│   └── structure.txt
 ├── LICENSE
-
+├── README.md
+├── Results
+│   ├── Descriptive Statistics.xlsx
+│   ├── Method Greedy_K.xlsx
+│   ├── Method Random.xlsx
+│   ├── Quality check.xlsx
+│   └── README.md
+├── environment.yml
+└── requirements.txt
 ```
 
 ## 4. Installation 
@@ -152,7 +181,7 @@ cd DDPM_X-Ray
 ***Step 3***:    
 Install Python and the required packages by following one of the methods below:  
 
-- ***Method 1: Usinf Conda***
+- ***Method 1: Using Conda***
 
   Create a Conda environment using the `environment.yml` file:      
   ```bash       
@@ -174,7 +203,7 @@ Install Python and the required packages by following one of the methods below:
         ```bash
         source DDPM_X-Ray\Scripts\activate
         ```
-      - On ***Windoes***:
+      - On ***Windows***:
         ```bash
         DDPM_X-Ray\Scripts\activate
         ```
@@ -205,7 +234,7 @@ The dataset used in this study consists of Chest X-ray (CXR) images with two cla
 ![alt text](Figures/Dataset.png)
 
 
-## 7. Running the Codes
+## 7. Code Execution Guide
 
 ### 7.1. Training the VGG16 Model
 
@@ -273,7 +302,7 @@ The results from the cross-validation and test set evaluations will provide insi
 
 ## 9. Cite us 
 
-- For any questions or issues, feel free to email Imran Khazrak (ikhazra@bgsu.edu) and/or Mostafa Rezaee (mostam@bgsu.edu).
+- For any questions or issues, feel free to email Iman Khazrak at ikhazra@bgsu.edu and/or Mostafa Rezaee at mostam@bgsu.edu.
 
 - Also, please consider cite us as follows:
 
