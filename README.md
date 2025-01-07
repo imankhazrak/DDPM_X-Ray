@@ -1,63 +1,128 @@
-# Enhancing Accuracy and Robustness in Medical Image Classification
+![alt text](Figures/Logo_DDPM_X-Ray.jpg)
 
-This repository contains the code and data used in the paper "Addressing Small and Imbalanced Medical Image Datasets Using Generative Models: A Comparative Study of DDPM and PGGANs with Random and Greedy K Sampling" by
+# GenAI Potentials to Enhance Medical Image Classification
 
-<p align="center">
-  <strong>Iman Khazrak, Shakhnoza Takhirova, Mostafa M. Rezaee, Merhdad Yadollahi, Robert C. Green II, and Shuteng Niu</strong>
-</p>
+Paper ([Link](https://doi.org/10.48550/arXiv.2412.12532)):  
+Addressing Small and Imbalanced Medical Image Datasets Using Generative Models: A Comparative Study of DDPM and PGGANs with Random and Greedy K Sampling 
 
+Authors:  
+Iman Khazrak, Shakhnoza Takhirova, Mostafa M. Rezaee, Mehrdad Yadollahi, Robert C. Green II, Shuteng Niu
 
+**Table of Contents** 
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-abstract"><i><b>1. Abstract</b></i></a>
+</div>
+&nbsp;
 
-## Abstract
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#2-our-contributions"><i><b>2. Our Contributions</b></i></a>
+</div>
+&nbsp;
 
-This project addresses the challenges of small and imbalanced medical image datasets by exploring two generative models: Denoising Diffusion Probabilistic Models (DDPM) and Progressive Growing Generative Adversarial Networks (PGGANs). These models are used to generate synthetic images to augment medical datasets, which improves the performance of classification models.
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-repository-contents"><i><b>3. Repository Contents</b></i></a>
+</div>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#4-installation"><i><b>4. Installation</b></i></a>
+</div>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#methodology"><i><b>5. Methodology</b></i></a>
+</div>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#6-dataset"><i><b>6. Dataset</b></i></a>
+</div>
+&nbsp;
+
+<details>
+  <summary><a href="#7-code-execution-guide"><i><b>7. Code Execution Guide</b></i></a></summary>
+  <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#71-training-the-vgg16-model">7.1. Training the VGG16 Model</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#72-training-the-custom-cnn-model">7.2. Training the Custom CNN Model</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#73-training-the-ddpm-model">7.3. Training the DDPM Model</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#74-training-the-pggans-model">7.4. Training the PGGANs Model</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#75-calculating-the-fid-scores">7.5. Calculating the FID Scores</a><br>
+  </div>
+</details>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#8-results"><i><b>8. Results</b></i></a>
+</div>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#9-cite-us"><i><b>9. Cite us</b></i></a>
+</div>
+&nbsp;
+
+## 1. Abstract
+
+This project addresses the challenges of small and imbalanced medical image datasets by exploring two generative models: Denoising Diffusion Probabilistic Models (DDPM) and Progressive Growing Generative Adversarial Networks (PGGANs). These models are used to generate synthetic images to augment medical datasets, which improves the performance of classification algorithms.
 
 We evaluate the impact of DDPM- and PGGAN-generated synthetic images on the performance of custom CNN, untrained VGG16, pretrained VGG16, and pretrained ResNet50 models, demonstrating significant improvements in model robustness and accuracy, especially in imbalanced scenarios.
 
-For more details, please refer to the paper.
+For more details, please refer to the [paper](https://doi.org/10.48550/arXiv.2412.12532).
 
-## Contributions
+## 2. Our Contributions
 
-- **An Evaluation Framework**: A comprehensive framework to systematically evaluate and compare the quality of images produced by DDPM and PGGANs.
-- **High-Quality Image Generation**: Demonstrates that producing high-quality and diverse synthetic images using small medical image datasets is feasible.
-- **Accuracy Improvement**: Incorporating synthetic images into the training datasets significantly improves the accuracy of classification models.
-- **Increased Robustness**: Adding synthetic images to the original datasets enhances the robustness of classification models.
-- **Faster Convergence**: The inclusion of synthetic images accelerates the convergence of classification models.
+- **An Evaluation Framework**:    
+A comprehensive framework to systematically evaluate and compare the quality of images produced by DDPM and PGGANs.
 
-## Contents
+- **High-Quality Image Generation**:     
+Demonstrates that producing high-quality and diverse synthetic images using small medical image datasets is feasible.   
 
-- `VGG128_all_models.ipynb`: Jupyter notebook for training and evaluating the VGG16 model.
-- `CNN_Classifier.ipynb`: Jupyter notebook for training and evaluating the custom CNN model.
-- `DDPM_Pytorch.ipynb`: Jupyter notebook for training and evaluating DDPM.
-- `progan_modules.py`: Module definitions for PGGANs.
-- `fid_plot.ipynb`: Jupyter notebook for calculating and plotting FID scores.
-- `requirements.txt`: List of required Python packages.
-- `environment.yml`: Conda environment configuration file.
+- **Accuracy Improvement**:     
+Incorporating synthetic images into the training datasets significantly improves the accuracy of classification algorithms.    
 
-## Project Structure
+- **Increased Robustness**:     
+Adding synthetic images to the original datasets enhances the robustness of classification algorithms.
+
+- **Faster Convergence**:     
+The inclusion of synthetic images accelerates the convergence of classification algorithms.
+
+## 3. Repository Contents
+<!-- tree -a -I '.git' > tree.txt -->
 
 ```sh
 .
-├── Code
-│   ├── Classification Models
-│   │   ├── Classification_128input
-│   │   └── Classification_224input
-│   ├── DDPM
-│   │   └── DDPM_Pytorch.ipynb
-│   ├── FID
-│   │   ├── Results.txt
-│   │   ├── fid.sh
-│   │   ├── fid_comparison_plot.png
-│   │   ├── fid_comparison_plot_full.png
-│   │   └── fid_plot.ipynb
-│   └── PGGANs
-│       ├── ModelTrainingImages
-│       ├── progan_modules.py
-│       ├── train.py
-│       ├── train_config_NRM200k_2024-04-11_20_17.txt
-│       ├── train_config_PNM200k_2024-04-11_21_23.txt
-│       ├── train_log_NRM200k_2024-04-11_20_17.txt
-│       └── train_log_PNM200k_2024-04-11_21_23.txt
+├── .gitignore
+├── Cite us
+│   └── README.md
+├── Codes
+│   ├── Classification Models
+│   │   ├── VGG_help.py
+│   │   ├── plots.py
+│   │   ├── updated_pretrained_balanced-VGG_ResNet-epo5.ipynb
+│   │   ├── updated_pretrained_imbalanced-VGG_ResNet-epo5.ipynb
+│   │   ├── updated_untrained_balanced-VGG_ResNet.ipynb
+│   │   └── updated_untrained_imbalanced-VGG_ResNet.ipynb
+│   ├── DDPM
+│   │   └── DDPM_Pytorch.ipynb
+│   ├── FID
+│   │   ├── FID.ipynb
+│   │   ├── Results.txt
+│   │   ├── fid.sh
+│   │   ├── fid_comparison_plot.png
+│   │   ├── fid_comparison_plot_full.png
+│   │   └── fid_plot.ipynb
+│   └── PGGANs
+│       ├── .DS_Store
+│       ├── ModelTrainingImages
+│       │   ├── PGAN_Architecture.png
+│       │   ├── PGAN_NRM_loss.png
+│       │   └── PGAN_PNM_loss.png
+│       ├── progan_modules.py
+│       ├── train.py
+│       ├── train_config_NRM200k_2024-04-11_20_17.txt
+│       ├── train_config_PNM200k_2024-04-11_21_23.txt
+│       ├── train_log_NRM200k_2024-04-11_20_17.txt
+│       └── train_log_PNM200k_2024-04-11_21_23.txt
 ├── Dataset
 │   ├── All_Data
 │   │   ├── NORMAL
@@ -72,61 +137,106 @@ For more details, please refer to the paper.
 │   └── Train
 │       ├── NORMAL
 │       └── PNEUMONIA
-├── img
-│   ├── DDPM_forward.png
-│   ├── FID.png
-│   ├── Normal_vs_Original_ddpm_3images.png
-│   ├── Pneumonia_Original_ddpm_gans_3images.png
-│   └── VGG16_and_CNN_performance_5 runs_2.png
-├── requirements.txt
-├── environment.yml
-├── README.md
+├── Figures
+│   ├── Classification_boxplots.png
+│   ├── Classification_boxplots_F1.png
+│   ├── DDPM_forward.png
+│   ├── Dataset.png
+│   ├── FID (1).png
+│   ├── FID.png
+│   ├── Flowchart2.png
+│   ├── Logo_DDPM_X-Ray.jpg
+│   ├── Normal_gallary.png
+│   ├── Normal_vs_Original_ddpm_3images.png
+│   ├── Pneumina_gallary.png
+│   ├── Pneumonia_Original_ddpm_gans_3images.png
+│   ├── README.md
+│   ├── Run_results.png
+│   ├── VGG16_and_CNN_performance_5 runs_2.png
+│   └── structure.txt
 ├── LICENSE
-
+├── README.md
+├── Results
+│   ├── Descriptive Statistics.xlsx
+│   ├── Method Greedy_K.xlsx
+│   ├── Method Random.xlsx
+│   ├── Quality check.xlsx
+│   └── README.md
+├── environment.yml
+└── requirements.txt
 ```
 
-## Setup
+## 4. Installation 
 
-### Prerequisites
+***Step 1***:  
+Please consider starring the repository to support its development.
 
-- Python 3.x
-- Conda or virtualenv
+***Step 2***:   
+Clone the repository by replacing `your-username` with your GitHub username in the command below. Then, navigate to the project directory.      
+```bash
+git clone https://github.com/your-username/DDPM_X-Ray.git    
+cd DDPM_X-Ray    
+```
 
-### Installation
+***Step 3***:    
+Install Python and the required packages by following one of the methods below:  
 
-1. Clone this repository:
-    ```bash
-    git clone https://github.com/yourusername/medical-image-classification.git
-    cd medical-image-classification
-    ```
+- ***Method 1: Using Conda***
 
-2. Install the required packages using `requirements.txt`:
-    ```bash
-    pip install -r requirements.txt
-    ```
+  Create a Conda environment using the `environment.yml` file:      
+  ```bash       
+  conda env create -f environment.yml      
+  conda activate DDPM_X-Ray        
+  ```     
 
-3. Alternatively, create a conda environment using `environment.yml`:
-    ```bash
-    conda env create -f environment.yml
-    conda activate your-environment-name
-    ```
+- ***Method 2: Using venv***    
+  
+  1. Ensure you are in the project directory `DDPM_X-Ray`.      
 
-## Methodology
-![alt text](img/Flowchart2.png)
+  2. Create a virtual environment using `venv`:   
+      ```bash
+      python -m venv DDPM_X-Ray
+      ```
 
-## Dataset
+  3. Activate the virtual environment:
+      - On ***Mac/Linux***:
+        ```bash
+        source DDPM_X-Ray\Scripts\activate
+        ```
+      - On ***Windows***:
+        ```bash
+        DDPM_X-Ray\Scripts\activate
+        ```
 
-The dataset used in this study consists of Chest X-ray (CXR) images with two classes: NORMAL and PNEUMONIA. The dataset is structured as follows:
+  4. Install the required packages using the `requirements.txt` file:
+      ```bash
+      pip install -r requirements.txt
+      ```
+
+- ***Method 3: Without setting up an environment***    
+
+  1. Make sure you have `python=3.10.14` installed on your machine.
+
+  2. Install the required packages using the `requirements.txt` file:
+      ```bash
+      pip install -r requirements.txt
+      ```
+
+## 5. Methodology
+![alt text](Figures/Flowchart2.png)
+
+## 6. Dataset
+
+The dataset used in this study consists of Chest X-ray (CXR) images with two classes: *NORMAL* and *PNEUMONIA*. The dataset is structured as follows:
 - `dataset/NORMAL`: Contains normal CXR images.
 - `dataset/PNEUMONIA`: Contains pneumonia CXR images.
 
+![alt text](Figures/Dataset.png)
 
-![alt text](img/Dataset.png)
 
+## 7. Code Execution Guide
 
-## Running the Code
-
-### Training the VGG16 Model
+### 7.1. Training the VGG16 Model
 
 1. Prepare the dataset:
     ```python
@@ -148,7 +258,7 @@ The dataset used in this study consists of Chest X-ray (CXR) images with two cla
     plot_train_history(fold_metrics_df, 'VGG16 Training History', 'vgg16_training_history.png')
     ```
 
-### Training the Custom CNN Model
+### 7.2. Training the Custom CNN Model
 
 1. Load the dataset and prepare it as shown in the VGG16 training section.
 
@@ -158,12 +268,12 @@ The dataset used in this study consists of Chest X-ray (CXR) images with two cla
     fold_metrics_df, best_model = fit_classification_model_cv(X, y)
     ```
 
-### Training DDPM
+### 7.3. Training the DDPM model
 
 1. Open the `DDPM_Pytorch.ipynb` notebook.
 2. Follow the instructions to train and evaluate the DDPM model.
 
-### Training PGGANs
+### 7.4. Training the PGGANs model
 
 1. Train the PGGAN model using the `train.py` script:
     ```bash
@@ -171,49 +281,43 @@ The dataset used in this study consists of Chest X-ray (CXR) images with two cla
     ```
 
 <p align="center">
-  <img src="img/Normal_gallary.png" alt="Normal vs Original DDPM" style="width:45%; margin-right: 5%;">
-  <img src="img/Pneumina_gallary.png" alt="Pneumonia Original DDPM GANS" style="width:45%;">
+  <img src="Figures/Normal_gallary.png" alt="Normal vs Original DDPM" style="width:45%; margin-right: 5%;">
+  <img src="Figures/Pneumina_gallary.png" alt="Pneumonia Original DDPM GANS" style="width:45%;">
 </p>
 
 
-### Calculating FID Scores
+### 7.5. Calculating the FID Scores
 
 1. Open the `fid_plot.ipynb` notebook.
 2. Follow the instructions to calculate and plot the FID scores.
 
-![alt text](img/FID (1).png)
+![alt text](Figures/FID (1).png)
 
-## Results
+## 8. Results
 
 The results from the cross-validation and test set evaluations will provide insights into the performance improvements achieved by using synthetic images generated by DDPM and PGGANs.
 
-![alt text](<img/Classification_boxplots.png>)
-![alt text](<img/Classification_boxplots_F1.png>)
+![alt text](<Figures/Classification_boxplots.png>)
+![alt text](<Figures/Classification_boxplots_F1.png>)
 
-## Contact
+## 9. Cite us 
 
-For any questions or issues, please contact:
+- For any questions or issues, feel free to email Iman Khazrak at ikhazra@bgsu.edu and/or Mostafa Rezaee at mostam@bgsu.edu.
 
-- Imran Khazrak: ikhazra@bgsu.edu
-- Shakhnoza Takhirova: takhirs@bgsu.edu
-- Mostafa M. Rezaee: mostam@bgsu.edu
-- Merhdad Yadollahi: mehrday@bgsu.edu
-- Robert C. Green II: greenr@bgsu.edu
-- Shuteng Niu: sniu@bgsu.edu
+- Also, please consider cite us as follows:
 
-## Citation  
+    - **IEEE style**:   
+I. Khazrak, S. Takhirova, M. M. Rezaee, M. Yadollahi, R. C. Green II, and S. Niu, "Addressing Small and Imbalanced Medical Image Datasets Using Generative Models: A Comparative Study of DDPM and PGGANs with Random and Greedy K Sampling," arXiv preprint, vol. 2412.12532, 2024. [Online]. Available: https://arxiv.org/abs/2412.12532.
 
-```bibtex
-@misc{khazrak2024ddpmxray,
-  author = {Iman Khazrak, Shakhnoza Takhirova, Mostafa M. Rezaee, Merhdad Yadollahi, Robert C. Green II, and Shuteng Niu},
-  title = {DDPM-X-Ray: Generative Models for Medical Image Augmentation},
-  year = {2024},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/imankhazrak/DDPM-X-Ray}},
-}
-```
-
-## License
-
-This project is licensed under the MIT License.
+    - **BibTeX**:
+        ```bibtex
+        @misc{khazrak2024addressingsmallimbalancedmedical,
+            title={Addressing Small and Imbalanced Medical Image Datasets Using Generative Models: A Comparative Study of DDPM and PGGANs with Random and Greedy K Sampling}, 
+            author={Iman Khazrak and Shakhnoza Takhirova and Mostafa M. Rezaee and Mehrdad Yadollahi and Robert C. Green II and Shuteng Niu},
+            year={2024},
+            eprint={2412.12532},
+            archivePrefix={arXiv},
+            primaryClass={cs.CV},
+            url={https://arxiv.org/abs/2412.12532}, 
+        }
+        ```
