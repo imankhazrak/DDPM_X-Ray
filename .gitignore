@@ -8,7 +8,7 @@
 tree.txt
 
 # To prevent Zone.Identifier files
-*.Zone.Identifier
+*Zone.Identifier
 
 # Conda environments
 *.conda
