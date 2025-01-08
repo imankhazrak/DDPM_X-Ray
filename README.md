@@ -2,7 +2,9 @@
 
 # GenAI Potentials to Enhance Medical Image Classification
 
-Paper ([Link](https://doi.org/10.48550/arXiv.2412.12532)):  
+**This repository contains the code and results presented in the above paper.**
+
+**The paper** ([Link](https://doi.org/10.48550/arXiv.2412.12532)):  
 Addressing Small and Imbalanced Medical Image Datasets Using Generative Models: A Comparative Study of DDPM and PGGANs with Random and Greedy K Sampling 
 
 Authors:  
@@ -93,7 +95,7 @@ The inclusion of synthetic images accelerates the convergence of classification 
 ## 3. Repository Contents
 <!-- Mac/Linux: tree -a --dirsfirst -I '.git' > tree.txt -->
 
-```sh
+```
 .
 ├── Cite us
 │   └── README.md
