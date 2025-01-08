@@ -56,9 +56,13 @@ Iman Khazrak, Shakhnoza Takhirova, Mostafa M. Rezaee, Mehrdad Yadollahi, Robert 
 </div>
 &nbsp;
 
-<div>
-  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#9-cite-us"><i><b>9. Cite us</b></i></a>
-</div>
+<details>
+  <summary><a href="#9-faq-and-citation-guidelines"><i><b>9. FAQ and Citation Guidelines</b></i></a></summary>
+  <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#71-training-the-vgg16-model">9.1. Frequently Asked Questions</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#72-training-the-custom-cnn-model">9.2. Citation Guidelines</a><br>
+  </div>
+</details>
 &nbsp;
 
 ## 1. Abstract
@@ -97,10 +101,10 @@ The inclusion of synthetic images accelerates the convergence of classification 
 │   ├── Classification Models
 │   │   ├── VGG_help.py
 │   │   ├── plots.py
-│   │   ├── updated_pretrained_balanced-VGG_ResNet-epo5.ipynb
-│   │   ├── updated_pretrained_imbalanced-VGG_ResNet-epo5.ipynb
-│   │   ├── updated_untrained_balanced-VGG_ResNet.ipynb
-│   │   └── updated_untrained_imbalanced-VGG_ResNet.ipynb
+│   │   ├── pretrained_balanced-VGG_ResNet-epo5.ipynb
+│   │   ├── pretrained_imbalanced-VGG_ResNet-epo5.ipynb
+│   │   ├── untrained_balanced-VGG_ResNet.ipynb
+│   │   └── untrained_imbalanced-VGG_ResNet.ipynb
 │   ├── DDPM
 │   │   └── DDPM_Pytorch.ipynb
 │   ├── FID
@@ -153,23 +157,7 @@ The inclusion of synthetic images accelerates the convergence of classification 
 │   └── Train
 │       ├── NORMAL
 │       └── PNEUMONIA
-├── Figures
-│   ├── Classification_boxplots.png
-│   ├── Classification_boxplots_F1.png
-│   ├── DDPM_forward.png
-│   ├── Dataset.png
-│   ├── FID_plot.png
-│   ├── FID_table.png
-│   ├── Flowchart2.png
-│   ├── Logo_DDPM_X-Ray.jpg
-│   ├── Normal_gallary.png
-│   ├── Normal_vs_Original_ddpm_3images.png
-│   ├── Pneumina_gallary.png
-│   ├── Pneumonia_Original_ddpm_gans_3images.png
-│   ├── README.md
-│   ├── Run_results.png
-│   ├── VGG16_and_CNN_performance_5 runs_2.png
-│   └── structure.txt
+├── Figures ===> (Presented in the repo's README.md)
 ├── Results
 │   ├── Descriptive Statistics.xlsx
 │   ├── Method Greedy_K.xlsx
@@ -188,14 +176,17 @@ The inclusion of synthetic images accelerates the convergence of classification 
 ***Step 1***:  
 Please consider starring the repository to support its development.
 
-***Step 2***:   
+***Step 2***:
+Fork the repository to your GitHub account by using the "Fork" option available at the top of the repository page.
+
+***Step 3***:   
 Clone the repository by replacing `your-username` with your GitHub username in the command below. Then, navigate to the project directory.      
 ```bash
 git clone https://github.com/your-username/DDPM_X-Ray.git    
 cd DDPM_X-Ray    
 ```
 
-***Step 3***:    
+***Step 4***:    
 Install Python and the required packages by following one of the methods below:  
 
 - ***Method 1: Using Conda***
@@ -240,6 +231,8 @@ Install Python and the required packages by following one of the methods below:
       ```
 
 ## 5. Methodology
+**Note:**   
+Click on the figure to open it in a new window for a clearer and more detailed view of its content.
 ![alt text](Figures/Flowchart2.png)
 
 ## 6. Dataset
@@ -317,24 +310,31 @@ The results from the cross-validation and test set evaluations will provide insi
 ![alt text](<Figures/Classification_boxplots.png>)
 ![alt text](<Figures/Classification_boxplots_F1.png>)
 
-## 9. Cite us 
+## 9. FAQ and Citation Guidelines
 
-- For any questions or issues, feel free to email Iman Khazrak at ikhazra@bgsu.edu and/or Mostafa Rezaee at mostam@bgsu.edu.
+### Frequently Asked Questions
+- **For any questions or issues**, feel free to reach out via email:
+  - Iman Khazrak: [ikhazra@bgsu.edu](mailto:ikhazra@bgsu.edu)
+  - Mostafa Rezaee: [mostam@bgsu.edu](mailto:mostam@bgsu.edu)
 
-- Also, please consider cite us as follows:
+### Citation Guidelines
+If you find our work helpful or relevant to your research, please consider citing it. Below are the citation formats:
 
-    - **IEEE style**:   
-I. Khazrak, S. Takhirova, M. M. Rezaee, M. Yadollahi, R. C. Green II, and S. Niu, "Addressing Small and Imbalanced Medical Image Datasets Using Generative Models: A Comparative Study of DDPM and PGGANs with Random and Greedy K Sampling," arXiv preprint, vol. 2412.12532, 2024. [Online]. Available: https://arxiv.org/abs/2412.12532.
+- **IEEE Style**:  
+  I. Khazrak, S. Takhirova, M. M. Rezaee, M. Yadollahi, R. C. Green II, and S. Niu,  
+  "Addressing Small and Imbalanced Medical Image Datasets Using Generative Models: A Comparative Study of DDPM and PGGANs with Random and Greedy K Sampling," arXiv preprint, vol. 2412.12532, 2024. [Online]. Available: [https://arxiv.org/abs/2412.12532](https://arxiv.org/abs/2412.12532).
 
-    - **BibTeX**:
-        ```bibtex
-        @misc{khazrak2024addressingsmallimbalancedmedical,
-            title={Addressing Small and Imbalanced Medical Image Datasets Using Generative Models: A Comparative Study of DDPM and PGGANs with Random and Greedy K Sampling}, 
-            author={Iman Khazrak and Shakhnoza Takhirova and Mostafa M. Rezaee and Mehrdad Yadollahi and Robert C. Green II and Shuteng Niu},
-            year={2024},
-            eprint={2412.12532},
-            archivePrefix={arXiv},
-            primaryClass={cs.CV},
-            url={https://arxiv.org/abs/2412.12532}, 
-        }
-        ```
+- **BibTeX**:
+  ```bibtex
+  @misc{khazrak2024addressingsmallimbalancedmedical,
+      title={Addressing Small and Imbalanced Medical Image Datasets Using Generative Models: A Comparative Study of DDPM and PGGANs with Random and Greedy K Sampling}, 
+      author={Iman Khazrak and Shakhnoza Takhirova and Mostafa M. Rezaee and Mehrdad Yadollahi and Robert C. Green II and Shuteng Niu},
+      year={2024},
+      eprint={2412.12532},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2412.12532}, 
+  }
+  ```
+
+Thank you for your support!
