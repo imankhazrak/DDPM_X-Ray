@@ -87,11 +87,10 @@ Adding synthetic images to the original datasets enhances the robustness of clas
 The inclusion of synthetic images accelerates the convergence of classification algorithms.
 
 ## 3. Repository Contents
-<!-- tree -a -I '.git' > tree.txt -->
+<!-- Mac/Linux: tree -a --dirsfirst -I '.git' > tree.txt -->
 
 ```sh
 .
-├── .gitignore
 ├── Cite us
 │   └── README.md
 ├── Codes
@@ -112,11 +111,11 @@ The inclusion of synthetic images accelerates the convergence of classification 
 │   │   ├── fid_comparison_plot_full.png
 │   │   └── fid_plot.ipynb
 │   └── PGGANs
-│       ├── .DS_Store
 │       ├── ModelTrainingImages
 │       │   ├── PGAN_Architecture.png
 │       │   ├── PGAN_NRM_loss.png
 │       │   └── PGAN_PNM_loss.png
+│       ├── .DS_Store
 │       ├── progan_modules.py
 │       ├── train.py
 │       ├── train_config_NRM200k_2024-04-11_20_17.txt
@@ -124,26 +123,43 @@ The inclusion of synthetic images accelerates the convergence of classification 
 │       ├── train_log_NRM200k_2024-04-11_20_17.txt
 │       └── train_log_PNM200k_2024-04-11_21_23.txt
 ├── Dataset
-│   ├── All_Data
-│   │   ├── NORMAL
-│   │   └── PNEUMONIA
-│   ├── Generated_Images
-│   │   ├── DDPM
-│   │   ├── PGGANs
-│   │   └── cGANs
-│   ├── Mixed_Data
-│   │   ├── Mixed150
-│   │   └── PGGANs
-│   └── Train
-│       ├── NORMAL
-│       └── PNEUMONIA
+│   ├── All_Data
+│   │   ├── NORMAL
+│   │   └── PNEUMONIA
+│   ├── Generated_Images
+│   │   ├── DDPM
+│   │   │   ├── NORMAL
+│   │   │   └── PNEUMONIA
+│   │   ├── PGGANs
+│   │   │   ├── Generated160
+│   │   │   │   ├── NORMAL
+│   │   │   │   └── PNEUMONIA
+│   │   │   ├── Images512ch150
+│   │   │   │   ├── NORMAL
+│   │   │   │   └── PNEUMONIA
+│   │   │   └── Images512ch160
+│   │   │       ├── NORMAL
+│   │   │       └── PNEUMONIA
+│   │   └── cGANs
+│   │       ├── cGAN_fake_NORMAL
+│   │       └── cGAN_fake_PNEUMONIA
+│   ├── Mixed_Data
+│   │   ├── Mixed150
+│   │   │   ├── NORMAL
+│   │   │   └── PNEUMONIA
+│   │   └── PGGANs
+│   │       ├── NORMAL
+│   │       └── PNEUMONIA
+│   └── Train
+│       ├── NORMAL
+│       └── PNEUMONIA
 ├── Figures
 │   ├── Classification_boxplots.png
 │   ├── Classification_boxplots_F1.png
 │   ├── DDPM_forward.png
 │   ├── Dataset.png
-│   ├── FID (1).png
-│   ├── FID.png
+│   ├── FID_plot.png
+│   ├── FID_table.png
 │   ├── Flowchart2.png
 │   ├── Logo_DDPM_X-Ray.jpg
 │   ├── Normal_gallary.png
@@ -154,14 +170,15 @@ The inclusion of synthetic images accelerates the convergence of classification 
 │   ├── Run_results.png
 │   ├── VGG16_and_CNN_performance_5 runs_2.png
 │   └── structure.txt
-├── LICENSE
-├── README.md
 ├── Results
 │   ├── Descriptive Statistics.xlsx
 │   ├── Method Greedy_K.xlsx
 │   ├── Method Random.xlsx
 │   ├── Quality check.xlsx
 │   └── README.md
+├── .gitignore
+├── LICENSE
+├── README.md
 ├── environment.yml
 └── requirements.txt
 ```
@@ -291,7 +308,7 @@ The dataset used in this study consists of Chest X-ray (CXR) images with two cla
 1. Open the `fid_plot.ipynb` notebook.
 2. Follow the instructions to calculate and plot the FID scores.
 
-![alt text](Figures/FID (1).png)
+![alt text](Figures/FID_plot.png)
 
 ## 8. Results
 
