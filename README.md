@@ -93,9 +93,8 @@ Adding synthetic images to the original datasets enhances the robustness of clas
 The inclusion of synthetic images accelerates the convergence of classification algorithms.
 
 ## 3. Repository Contents
-<!-- Mac/Linux: tree -a --dirsfirst -I '.git' > tree.txt -->
-
 ```
+|   |   ├── preprocessed_example.csv
 .
 ├── Cite us
 │   └── README.md
@@ -129,10 +128,10 @@ The inclusion of synthetic images accelerates the convergence of classification 
 │       ├── train_log_NRM200k_2024-04-11_20_17.txt
 │       └── train_log_PNM200k_2024-04-11_21_23.txt
 ├── Dataset
-│   ├── All_Data
-│   │   ├── NORMAL
-│   │   └── PNEUMONIA
-│   ├── Generated_Images
+│   ├── Origina_Data                    <- Source: Kaggle
+│   │   ├── NORMAL                      <- 1802 NORMAL    Chest X-ray (CXR) images
+│   │   └── PNEUMONIA                   <- 1800 PNEUMONIA Chest X-ray (CXR) images
+│   ├── Generated_Images                <- Using DDPM & PGGANs models
 │   │   ├── DDPM
 │   │   │   ├── NORMAL
 │   │   │   └── PNEUMONIA
@@ -145,10 +144,10 @@ The inclusion of synthetic images accelerates the convergence of classification 
 │   │   │   │   └── PNEUMONIA
 │   │   │   └── Images512ch160
 │   │   │       ├── NORMAL
-│   │   │       └── PNEUMONIA
-│   │   └── cGANs
-│   │       ├── cGAN_fake_NORMAL
-│   │       └── cGAN_fake_PNEUMONIA
+│   │   │       └── PNEUMONIA         <- 
+│   │   └── cGANs                     <-
+│   │       ├── cGAN_fake_NORMAL      <-
+│   │       └── cGAN_fake_PNEUMONIA   <- 
 │   ├── Mixed_Data
 │   │   ├── Mixed150
 │   │   │   ├── NORMAL
@@ -340,3 +339,19 @@ If you find our work helpful or relevant to your research, please consider citin
   ```
 
 Thank you for your support!
+
+<!-- 
+# Commands:
+
+To make tree (folders and files):   
+Mac/Linux: tree -a --dirsfirst -I '.git' > tree.txt  
+
+To make tree (just folders):
+tree -d > tree.txt
+
+To delete Zone.Identifier files which are made by windows:          
+find . -type f -name "*Zone.Identifier*" -exec rm -f "{}" +   
+
+To count the number of files:  
+find . -type f | wc -l                                        
+-->
