@@ -158,7 +158,7 @@ The inclusion of synthetic images accelerates the convergence of classification 
 │   └── Train
 │       ├── NORMAL
 │       └── PNEUMONIA
-├── Figures ===> (Presented in the repo's README.md)
+├── Figures                           <- 15 figures presented in the repo's main README.md
 ├── Results
 │   ├── Descriptive Statistics.xlsx
 │   ├── Method Greedy_K.xlsx
