@@ -93,8 +93,6 @@ Adding synthetic images to the original datasets enhances the robustness of clas
 The inclusion of synthetic images accelerates the convergence of classification algorithms.
 
 ## 3. Repository Contents
-<!-- Mac/Linux: tree -a --dirsfirst -I '.git' > tree.txt -->
-
 ```
 .
 ├── Cite us
@@ -121,7 +119,6 @@ The inclusion of synthetic images accelerates the convergence of classification 
 │       │   ├── PGAN_Architecture.png
 │       │   ├── PGAN_NRM_loss.png
 │       │   └── PGAN_PNM_loss.png
-│       ├── .DS_Store
 │       ├── progan_modules.py
 │       ├── train.py
 │       ├── train_config_NRM200k_2024-04-11_20_17.txt
@@ -132,45 +129,110 @@ The inclusion of synthetic images accelerates the convergence of classification 
 │   ├── All_Data
 │   │   ├── NORMAL
 │   │   └── PNEUMONIA
-│   ├── Generated_Images
-│   │   ├── DDPM
-│   │   │   ├── NORMAL
-│   │   │   └── PNEUMONIA
-│   │   ├── PGGANs
-│   │   │   ├── Generated160
-│   │   │   │   ├── NORMAL
-│   │   │   │   └── PNEUMONIA
-│   │   │   ├── Images512ch150
-│   │   │   │   ├── NORMAL
-│   │   │   │   └── PNEUMONIA
-│   │   │   └── Images512ch160
-│   │   │       ├── NORMAL
-│   │   │       └── PNEUMONIA
-│   │   └── cGANs
-│   │       ├── cGAN_fake_NORMAL
-│   │       └── cGAN_fake_PNEUMONIA
-│   ├── Mixed_Data
-│   │   ├── Mixed150
-│   │   │   ├── NORMAL
-│   │   │   └── PNEUMONIA
-│   │   └── PGGANs
-│   │       ├── NORMAL
-│   │       └── PNEUMONIA
-│   └── Train
-│       ├── NORMAL
-│       └── PNEUMONIA
-├── Figures ===> (Presented in the repo's README.md)
+│   ├── Balanced_data
+│   │   ├── Greedy_K_Selection
+│   │   │   ├── Mixed
+│   │   │   │   ├── DDPM_Mixed
+│   │   │   │   │   ├── NORMAL
+│   │   │   │   │   └── PNEUMONIA
+│   │   │   │   ├── PGGANS150_Mixed
+│   │   │   │   │   ├── NORMAL
+│   │   │   │   │   └── PNEUMONIA
+│   │   │   │   └── PGGANS160_Mixed
+│   │   │   │       ├── NORMAL
+│   │   │   │       └── PNEUMONIA
+│   │   │   ├── Original
+│   │   │   │   └── selected_images
+│   │   │   │       ├── NORMAL
+│   │   │   │       └── PNEUMONIA
+│   │   │   └── Test_greedy
+│   │   │       └── Test
+│   │   │           ├── NORMAL
+│   │   │           └── PNEUMONIA
+│   │   └── Randeom_Selection
+│   │       ├── Mixed
+│   │       │   ├── DDPM_Mixed
+│   │       │   │   ├── NORMAL
+│   │       │   │   └── PNEUMONIA
+│   │       │   ├── PGGANS150_Mixed
+│   │       │   │   ├── NORMAL
+│   │       │   │   └── PNEUMONIA
+│   │       │   └── PGGANS160_Mixed
+│   │       │       ├── NORMAL
+│   │       │       └── PNEUMONIA
+│   │       ├── Original_Random
+│   │       │   ├── NORMAL
+│   │       │   └── PNEUMONIA
+│   │       └── Test_random
+│   │           ├── NORMAL
+│   │           └── PNEUMONIA
+│   └── Imbalanced_data
+│       ├── Greedy_K_Selection
+│       │   ├── Mixed
+│       │   │   ├── DDPM_Mixed
+│       │   │   │   ├── NORMAL
+│       │   │   │   └── PNEUMONIA
+│       │   │   ├── PGGANS150_Mixed
+│       │   │   │   ├── NORMAL
+│       │   │   │   └── PNEUMONIA
+│       │   │   └── PGGANS160_Mixed
+│       │   │       ├── NORMAL
+│       │   │       └── PNEUMONIA
+│       │   ├── Original
+│       │   │   ├── NORMAL
+│       │   │   └── PNEUMONIA
+│       │   └── Test_greedy
+│       │       ├── NORMAL
+│       │       └── PNEUMONIA
+│       └── Randeom_Selection
+│           ├── Mixed
+│           │   ├── DDPM_Mixed
+│           │   │   ├── NORMAL
+│           │   │   └── PNEUMONIA
+│           │   ├── PGGANS150_Mixed
+│           │   │   ├── NORMAL
+│           │   │   └── PNEUMONIA
+│           │   └── PGGANS160_Mixed
+│           │       ├── NORMAL
+│           │       └── PNEUMONIA
+│           ├── Original
+│           │   ├── NORMAL
+│           │   └── PNEUMONIA
+│           └── imbalanced_test
+│               ├── NORMAL
+│               └── PNEUMONIA
+├── Figures
+│   ├── Classification_boxplots.png
+│   ├── Classification_boxplots_F1.png
+│   ├── DDPM_forward.png
+│   ├── Dataset.png
+│   ├── FID_plot.png
+│   ├── FID_table.png
+│   ├── Flowchart2.png
+│   ├── Logo_DDPM_X-Ray.jpg
+│   ├── Normal_gallary.png
+│   ├── Normal_vs_Original_ddpm_3images.png
+│   ├── Pneumina_gallary.png
+│   ├── Pneumonia_Original_ddpm_gans_3images.png
+│   ├── README.md
+│   ├── Run_results.png
+│   └── VGG16_and_CNN_performance_5 runs_2.png
 ├── Results
-│   ├── Descriptive Statistics.xlsx
-│   ├── Method Greedy_K.xlsx
-│   ├── Method Random.xlsx
-│   ├── Quality check.xlsx
-│   └── README.md
+│   ├── Descriptive_Statistics.xlsx
+│   ├── Greedy-k_Method_Analysis.xlsx
+│   ├── Model_Quality_Evaluation.xlsx
+│   ├── README.md
+│   └── Random_Method_Analysis.xlsx
 ├── .gitignore
+├── Code.zip
+├── DDPM_X_Ray___Paper.pdf
 ├── LICENSE
 ├── README.md
 ├── environment.yml
-└── requirements.txt
+├── requirements.txt
+└── tree.txt
+
+85 directories, 64659 files
 ```
 
 ## 4. Installation 
@@ -340,3 +402,19 @@ If you find our work helpful or relevant to your research, please consider citin
   ```
 
 Thank you for your support!
+
+<!-- 
+# Commands:
+
+To make tree (folders and files):   
+Mac/Linux: tree -a --dirsfirst -I '.git' > tree.txt  
+
+To make tree (just folders):
+tree -d > tree.txt
+
+To delete Zone.Identifier files which are made by windows:          
+find . -type f -name "*Zone.Identifier*" -exec rm -f "{}" +   
+
+To count the number of files:  
+find . -type f | wc -l                                        
+-->
