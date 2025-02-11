@@ -129,7 +129,8 @@ torchvision==0.17.1
 tornado @ file:///croot/tornado_1696936946304/work
 tqdm==4.66.2
 traitlets==5.14.2
-transformers==4.41.2
+# transformers==4.41.2
+transformers>=4.48.0
 triton==2.2.0
 typeguard==2.13.3
 typing_extensions==4.10.0
